@@ -1,6 +1,8 @@
 <template name="bar">
+    asdf
     {{ title}}
     {{ slug }}
     {{ address }}
     {{ balance.data.data.confirmed_received_value }}
+    <progress value="{{balance.data.data.confirmed_received_value}}" max="{{amount}}"></progress>  
 </template>
