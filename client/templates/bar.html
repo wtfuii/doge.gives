@@ -4,5 +4,6 @@
     {{ slug }}
     {{ address }}
     {{ balance.data.data.confirmed_received_value }}
-    <progress value="{{balance.data.data.confirmed_received_value}}" max="{{amount}}"></progress>  
+    {{ percent }}
+    <progress value="{{balance}}" max="{{amount}}"></progress>  
 </template>

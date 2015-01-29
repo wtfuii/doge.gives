@@ -1,3 +1,3 @@
-Meteor.publish('bars', function() {
-    return Bars.find();
+Meteor.publish('bars', function(slug) {
+    return Bars.find({slug: slug});
 });

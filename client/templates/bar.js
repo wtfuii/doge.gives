@@ -1,7 +1,6 @@
 Template.bar.helpers({
-    balance: function() { return Session.get("receivedDOGE") },
-    percent: function(balance, target) { 
-        d = Math.round( 100 / target * balance )
+    percent: function() { 
+        d = ( 100 / Template.currentData().amount * Template.currentData().balance ).toFixed(2)
         if (d > 100) {
             return 100
         }

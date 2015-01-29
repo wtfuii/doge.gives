@@ -1,0 +1,13 @@
+body {
+    background-image: url('/images/grey.png');
+}
+
+#newbox {
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+}
+
+.errordescription {
+    float: right;
+    display: block;
+}
