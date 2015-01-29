@@ -3,18 +3,18 @@
     <div id="newbox">
         <h1>New tracking bar</h1>
         <form>
-            <div class="form-group">
-                <label for="projectTitle" class="control-label">Project title</label><span class="errordescription has-error"></span>
-                <input type="text" class="form-control" id="projectTitle" placeholder="Enter project title">
-                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            <div class="form-group {{ fieldStyling "title" "formGroup"}}">
+                <label for="title" class="control-label">Project title</label><span class="errordescription has-error">{{ fieldStyling "title" "errordescription"}}</span>
+                <input type="text" class="form-control" id="title" placeholder="Enter project title">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "title" "formControlFeedback"}}"></span>
             </div>
             <div class="form-group">
                 <label for="slug" class="control-label">URL: http://doge.gives/</label>
                 <input type="text" class="form-control" id="slug" placeholder="wowverycharity">
             </div>
             <div class="form-group">
-                <label for="donationAddress" class="control-label">Donation address</label>
-                <input type="text" class="form-control" id="donationAddress" placeholder="Enter Dogecoin address">
+                <label for="address" class="control-label">Donation address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter Dogecoin address">
             </div>
             <div class="form-group">
                 <label for="amount" class="control-label">Target amount of DOGE</label>

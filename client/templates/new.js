@@ -1,10 +1,18 @@
+Template.new.helpers({
+    fieldStyling: function (field, element) {
+        if (Session.get(field)) {
+            return Session.get(field)[element]
+        }
+    }
+})
+
 Template.new.events({
     'submit form': function(e) {
         e.preventDefault();
         var bar = {
-            title: $(e.target).find('[id=projectTitle]').val(),
+            title: $(e.target).find('[id=title]').val(),
             slug: $(e.target).find('[id=slug]').val(),
-            address: $(e.target).find('[id=donationAddress]').val(),
+            address: $(e.target).find('[id=address]').val(),
             amount: $(e.target).find('[id=amount]').val(),
         }
         var b = Bars.insert(bar)
@@ -13,25 +21,22 @@ Template.new.events({
         })
     },
 
-    'keyup #projectTitle': function(e) {
-        var input = $("#projectTitle").val()
+    'keyup #title': function(e) {
+        var input = $("#title").val()
         try {
             checkTitle(input)
-            $("#projectTitle").closest($(".form-group")).removeClass("has-error has-feedback")
-            //$("#projectTitle").closest($(".form-group")).find($(".form-control-feedback")).css("display", "none")
+            setErrors("title")
         }
         catch (err) {
-           $("#projectTitle").closest($(".form-group")).addClass("has-error has-feedback")
-           $("#projectTitle").closest($(".form-group")).find($(".errordescription")).text(err.reason)
-           //$("#projectTitle").closest($(".form-group")).find($(".form-control-feedback")).css("display", "")
+           setErrors("title", true, err)
         }
     },
 
-    'keypress #slug': function(e) {
+    'keyup #slug': function(e) {
         var input = $("#slug").val()
-        Meteor.call('checkSlug', input, function(error, result) {
+        Meteor.call('checkSlug', input, function(err, result) {
             if (error) {
-                Session.set("checkSlug", false)
+                Session.set("slug", false)
             }
             else {
                 Session.set("checkSlug", true)
@@ -41,3 +46,11 @@ Template.new.events({
     }
 
 })
+
+setErrors = function(field, isError, error) {
+    if (isError) {
+        Session.set(field, {formGroup: "has-error has-feedback", formControlFeedback: "display: block;", errordescription: error.reason})
+    } else {
+        Session.set("title", {formGroup: "", formControlFeedback: "display: none;", errordescription: ""})
+    }
+}
