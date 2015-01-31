@@ -8,17 +8,20 @@
                 <input type="text" class="form-control" id="title" placeholder="Enter project title">
                 <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "title" "formControlFeedback"}}"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group {{ fieldStyling "slug" "formGroup"}}"><span class="errordescription has-error">{{ fieldStyling "slug" "errordescription"}}</span>
                 <label for="slug" class="control-label">URL: http://doge.gives/</label>
                 <input type="text" class="form-control" id="slug" placeholder="wowverycharity">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "slug" "formControlFeedback"}}"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group {{ fieldStyling "address" "formGroup"}}"><span class="errordescription has-error">{{ fieldStyling "address" "errordescription"}}</span>
                 <label for="address" class="control-label">Donation address</label>
                 <input type="text" class="form-control" id="address" placeholder="Enter Dogecoin address">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "address" "formControlFeedback"}}"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group {{ fieldStyling "amount" "formGroup"}}"><span class="errordescription has-error">{{ fieldStyling "amount" "errordescription"}}</span>
                 <label for="amount" class="control-label">Target amount of DOGE</label>
                 <input type="number" class="form-control" id="amount" placeholder="Exmaple: 100000">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "amount" "formControlFeedback"}}"></span>
             </div>
             <button type="submit" class="btn btn-primary">Create donation tracker</button>
         </form>

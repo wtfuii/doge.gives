@@ -34,23 +34,37 @@ Template.new.events({
 
     'keyup #slug': function(e) {
         var input = $("#slug").val()
-        Meteor.call('checkSlug', input, function(err, result) {
+        Meteor.call('checkSlug', input, function(error, result) {
             if (error) {
-                Session.set("slug", false)
+                setErrors("slug", true, error)
             }
             else {
-                Session.set("checkSlug", true)
+                setErrors("slug")
             }
-            console.log(Session.get("checkSlug"))
         })
+    },
+    
+    'keyup #address': function(e) {
+        var input = $("#address").val()
+        checkAddress(input, true)
+    },
+    
+    'change #amount, keyup #amount': function(e) {
+        var input = $("#amount").val()
+        try {
+            checkAmount(input)
+            setErrors("amount")
+        }
+        catch (err) {
+           setErrors("amount", true, err)
+        }
     }
-
 })
 
 setErrors = function(field, isError, error) {
     if (isError) {
         Session.set(field, {formGroup: "has-error has-feedback", formControlFeedback: "display: block;", errordescription: error.reason})
     } else {
-        Session.set("title", {formGroup: "", formControlFeedback: "display: none;", errordescription: ""})
+        Session.set(field, {formGroup: "", formControlFeedback: "display: none;", errordescription: ""})
     }
 }
