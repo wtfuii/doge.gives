@@ -15,10 +15,19 @@ Template.new.events({
             address: $(e.target).find('[id=address]').val(),
             amount: $(e.target).find('[id=amount]').val(),
         }
-        var b = Bars.insert(bar)
-        Router.go('bar', {
-            slug: bar.slug
+        try {
+        Meteor.call('submitNew', bar, function(error, result) {
+            if (error) {
+                console.log(error)
+            } else {
+            Router.go('bar', {
+                slug: bar.slug
         })
+            }
+        })
+        } catch (e) {
+            console.log("catched recall")
+        }
     },
 
     'keyup #title': function(e) {
