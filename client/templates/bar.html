@@ -1,9 +1,13 @@
 <template name="bar">
-    asdf
-    {{ title}}
-    {{ slug }}
-    {{ address }}
-    {{ balance.data.data.confirmed_received_value }}
-    {{ percent }}
-    <progress value="{{balance}}" max="{{amount}}"></progress>  
+    
+    <h1>{{ title}}</h1>
+    Donationaddress: {{ address }}<br>
+    
+    Balance: {{ balance }}<br>
+    Target: {{ amount }}<br>
+    <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%;">
+  </div>
+</div>
+    {{ percent }}% of targetamount funded.
 </template>
