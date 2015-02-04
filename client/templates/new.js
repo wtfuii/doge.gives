@@ -3,6 +3,10 @@ Template.new.helpers({
         if (Session.get(field)) {
             return Session.get(field)[element]
         }
+    },
+    getcurrentSlug: function() {
+        var r = Session.get('currentSlug')
+        return r.length > 20 ? r.substring(0,20) + "..." : r
     }
 })
 
@@ -30,7 +34,7 @@ Template.new.events({
         }
     },
 
-    'keyup #title': function(e) {
+    'keyup #title, submit form': function(e) {
         var input = $("#title").val()
         try {
             checkTitle(input)
@@ -41,8 +45,9 @@ Template.new.events({
         }
     },
 
-    'keyup #slug': function(e) {
+    'keyup #slug, submit form': function(e) {
         var input = $("#slug").val()
+        Session.set('currentSlug', input)
         Meteor.call('checkSlug', input, function(error, result) {
             if (error) {
                 setErrors("slug", true, error)
@@ -53,12 +58,12 @@ Template.new.events({
         })
     },
     
-    'keyup #address': function(e) {
+    'keyup #address, submit form': function(e) {
         var input = $("#address").val()
         checkAddress(input, true)
     },
     
-    'change #amount, keyup #amount': function(e) {
+    'change #amount, keyup #amount, submit form': function(e) {
         var input = $("#amount").val()
         try {
             checkAmount(input)
