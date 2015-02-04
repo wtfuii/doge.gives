@@ -5,6 +5,9 @@ Template.bar.helpers({
             return 100
         }
         return d
+    },
+    complete: function (percent) {
+        return percent == 100 ? true : false
     }
 })
 

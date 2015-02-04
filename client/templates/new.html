@@ -1,7 +1,7 @@
 <template name="new">
 
     <div id="newbox">
-        <h1>New tracking bar</h1>
+                <h1>New tracking bar</h1>
         <form>
             <div class="form-group {{ fieldStyling "title" "formGroup"}}">
                 <label for="title" class="control-label">Project title</label><span class="errordescription has-error">{{ fieldStyling "title" "errordescription"}}</span>
@@ -19,11 +19,14 @@
                 <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "address" "formControlFeedback"}}"></span>
             </div>
             <div class="form-group {{ fieldStyling "amount" "formGroup"}}"><span class="errordescription has-error">{{ fieldStyling "amount" "errordescription"}}</span>
-                <label for="amount" class="control-label">Target amount of DOGE</label>
+                <label for="amount" class="control-label">Target amount in Ɖ</label>
                 <input type="number" class="form-control" id="amount" placeholder="Exmaple: 100000">
                 <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" style="{{ fieldStyling "amount" "formControlFeedback"}}"></span>
             </div>
             <button type="submit" class="btn btn-primary">Create donation tracker</button>
         </form>
+        <br>
+        <p>Doge.gives provides an easy way to create a donation bar for dogecoin fundraising campaigns. It only takes one minute to create a page that keeps track of your donation progress.</p>
+        <p>The donationbar calculates the progress by counting all Dogecoins ever received by your fundraising address. Because of this, you are able to transfer coins away from that address to another address (cold storage?) without changing the progress of your fundraising campaign.</p>
     </div>
 </template>
