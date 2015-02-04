@@ -1,10 +1,17 @@
 body {
-    background-image: url('/images/grey.png');
+    background-image: url('/images/dark.jpg');
 }
 
 #newbox {
     max-width: 600px;
-    margin: 0 auto 0 auto;
+    margin: 2em auto 0 auto;
+    background-color: #272B30;
+    padding: 1px 25px 25px 25px;
+    border-radius: 5px;
+    border-color: #272B30;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0px 0px 5px 2px black;
 }
 
 .errordescription {
@@ -22,4 +29,15 @@ body {
 
 .progress-bar {
     background-image: url('/images/dogebg.jpg');
+    background-size: 600px;
+}
+
+#targetSpan {
+    display: inline-block;
+    float: right;
+}
+
+#receivedSpan {
+    display: inline-block;
+    float: left;
 }

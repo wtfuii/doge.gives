@@ -7,3 +7,7 @@ Template.bar.helpers({
         return d
     }
 })
+
+Template.bar.rendered = function() {
+    this.$('#qRButton').popover()
+}

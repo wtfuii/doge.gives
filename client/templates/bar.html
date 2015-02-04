@@ -1,13 +1,15 @@
 <template name="bar">
-    
+    <div id="newbox">
     <h1>{{ title}}</h1>
-    Donationaddress: {{ address }}<br>
+    <p>Address: {{ address }}</p>
+    <center><p><a type="button" class="btn btn-default" href="dogecoin://{{address}}">Donate now</a> <a id="qRButton" type="button" class="btn btn-default" ata-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="<img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{address}}' width='150' height='150'>">Show QR code</a><br></p></center>
     
-    Balance: {{ balance }}<br>
-    Target: {{ amount }}<br>
+    
+    <span id="receivedSpan" class="label label-default">Received: {{ balance }} Ɖ</span><span id="targetSpan" class="label label-default">Target: {{ amount }} Ɖ</span><br>
     <div class="progress">
   <div class="progress-bar" role="progressbar" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percent }}%;">
   </div>
 </div>
-    {{ percent }}% of targetamount funded.
+    <center><span class="label label-primary">Funded: {{ percent }}%</span></center>
+    </div>
 </template>
