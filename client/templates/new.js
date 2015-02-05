@@ -15,7 +15,7 @@ Template.new.events({
         e.preventDefault();
         var bar = {
             title: $(e.target).find('[id=title]').val(),
-            slug: $(e.target).find('[id=slug]').val(),
+            slug: $(e.target).find('[id=slug]').val().toLowerCase(),
             address: $(e.target).find('[id=address]').val(),
             amount: $(e.target).find('[id=amount]').val(),
         }
