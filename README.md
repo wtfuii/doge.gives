@@ -14,4 +14,4 @@ doge.gives relies on the following API services:
 - adding an upload feature for a project logo
 - adding live update of donation bar on new transactions
 - accepting Bitcoin and other altcoins via ShapeShift.io
-- adding a load spinner
+- create bars for other crypto currencies
