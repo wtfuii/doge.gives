@@ -88,3 +88,7 @@ body {
 #loader {
   display: block;
 }
+
+.notFound {
+    border-radius: 50%;
+}
