@@ -1,5 +1,5 @@
 # doge.gives
-This repo contains the source code of http://doge.gives . 
+This repo contains the source code of http://doge.gives . Doge.gives is based on the JavaScript Framework [Meteor].
 
 Doge.gives provides an easy way to create a donation bar for dogecoin fundraising campaigns. It only takes one minute to create a page that keeps track of your donation progress. The donationbar calculates the progress by counting all Dogecoins ever received by your fundraising address. Because of this, you are able to transfer coins away from that address to another address (cold storage?) without changing the progress of your fundraising campaign.
 
@@ -15,3 +15,5 @@ doge.gives relies on the following API services:
 - adding live update of donation bar on new transactions
 - accepting Bitcoin and other altcoins via ShapeShift.io
 - create bars for other crypto currencies
+
+[Meteor]:https://www.meteor.com/
