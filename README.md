@@ -10,7 +10,7 @@ doge.gives relies on the following API services:
 
 ## ToDos
 - displaying fancy celebration animations once the fundraising target is reached.
-- adding a Rich Text field for a campagin description
+- adding a rich text field for a campaign description
 - adding an upload feature for a project logo
 - adding live update of donation bar on new transactions
 - accepting Bitcoin and other altcoins via ShapeShift.io
