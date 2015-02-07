@@ -15,5 +15,8 @@ doge.gives relies on the following API services:
 - adding live update of donation bar on new transactions
 - accepting Bitcoin and other altcoins via ShapeShift.io
 - create bars for other crypto currencies
+- embeddable code for 3rd party websites
+- other themes
+- changing .png for direct linking
 
 [Meteor]:https://www.meteor.com/
