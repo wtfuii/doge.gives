@@ -18,6 +18,7 @@ Template.new.events({
             slug: $(e.target).find('[id=slug]').val().toLowerCase(),
             address: $(e.target).find('[id=address]').val(),
             amount: $(e.target).find('[id=amount]').val(),
+            description: $(".epicarea").val()
         }
         try {
         Meteor.call('submitNew', bar, function(error, result) {

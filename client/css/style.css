@@ -4,7 +4,7 @@ body {
 
 #newbox {
     max-width: 600px;
-    margin: 2em auto 0 auto;
+    margin: 2em auto 2em auto;
     background-color: #272B30;
     padding: 1px 25px 25px 25px;
     border-radius: 5px;
